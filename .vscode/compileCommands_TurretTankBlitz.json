@@ -1,0 +1,42 @@
+[
+	{
+		"file": "C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\Source\\TurretTankBlitz\\BasePawn.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\.vscode\\compileCommands_TurretTankBlitz\\TurretTankBlitz.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\Source\\TurretTankBlitz\\BasePawn.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\.vscode\\compileCommands_TurretTankBlitz\\TurretTankBlitz.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\Source\\TurretTankBlitz\\TurretTankBlitz.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\.vscode\\compileCommands_TurretTankBlitz\\TurretTankBlitz.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\Source\\TurretTankBlitz\\TurretTankBlitz.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\.vscode\\compileCommands_TurretTankBlitz\\TurretTankBlitz.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\Source\\TurretTankBlitz\\TurretTankBlitz.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Unreal\\TurretTankBlitz\\TurretTankBlitz\\.vscode\\compileCommands_TurretTankBlitz\\TurretTankBlitz.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	}
+]
