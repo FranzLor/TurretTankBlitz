@@ -16,3 +16,16 @@ ATank::ATank() {
     Camera->SetupAttachment(SpringArm);
 
 }
+
+// Called to bind functionality to input
+void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+    PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::Move);
+}
+
+
+
+void ATank::Move(float Value) {
+    UE_LOG(LogTemp, Warning, TEXT("Move Forward: %f"), Value);
+}
