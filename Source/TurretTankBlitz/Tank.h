@@ -17,6 +17,10 @@ class TURRETTANKBLITZ_API ATank : public ABasePawn
 public:
 	ATank();
 
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 private:
 	UPROPERTY(VisibleAnywhere, category = "Components")
 	class USpringArmComponent* SpringArm;
