@@ -24,7 +24,11 @@ private:
 	class ATank* Tank;
 
 	class ATurretTankBlitzPlayerController* TurretTankBlitzPlayerController;
+
+
+	float StartDelay = 3.f;
 	
+	void HandleGameStart();
 };
 
 

@@ -23,8 +23,25 @@ void ATurretTankBlitzGameMode::ActorDied(AActor* DeadActor) {
 
 void ATurretTankBlitzGameMode::BeginPlay() {
     Super::BeginPlay();
+    HandleGameStart();
 
-    Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
+}
 
+
+void ATurretTankBlitzGameMode::HandleGameStart() {
+     Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
     TurretTankBlitzPlayerController = Cast<ATurretTankBlitzPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
+
+    if (TurretTankBlitzPlayerController) {
+        TurretTankBlitzPlayerController->SetPlayerEnabledState(false);
+
+        FTimerHandle PlayerEnableTimerHandle;
+        FTimerDelegate PlayerEnableTimerDelegate = FTimerDelegate::CreateUObject(
+            TurretTankBlitzPlayerController, 
+            &ATurretTankBlitzPlayerController::SetPlayerEnabledState, 
+            true
+        );
+
+        GetWorldTimerManager().SetTimer(PlayerEnableTimerHandle, PlayerEnableTimerDelegate, StartDelay, false);
+    }
 }
