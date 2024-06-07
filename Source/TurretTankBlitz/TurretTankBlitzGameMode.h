@@ -22,6 +22,8 @@ protected:
 
 private:
 	class ATank* Tank;
+
+	class ATurretTankBlitzPlayerController* TurretTankBlitzPlayerController;
 	
 };
 
