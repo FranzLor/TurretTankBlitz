@@ -22,7 +22,17 @@ ATank::ATank() {
 void ATank::BeginPlay()
 {
 	Super::BeginPlay();
+
+    // casting helps get player controller ref
+    PlayerControllerRef = Cast<APlayerController>(GetController());
 	
+}
+
+// Called every frame
+void ATank::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
 }
 
 // Called to bind functionality to input

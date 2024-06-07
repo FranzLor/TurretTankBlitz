@@ -15,12 +15,6 @@ public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
 
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-
 private:
 	// Tank collision and meshes
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
