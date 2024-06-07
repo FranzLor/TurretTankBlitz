@@ -22,7 +22,14 @@ protected:
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Combat");
-	float FireRange = 300.0f;
+	float FireRange = 300.f;
+
+	FTimerHandle FireRateTimerHandle;
+	float FireRate = 2.f;
+
+	void CheckFireCondition();
+
+	bool InFireRange();
 
 	class ATank* Tank;
 };
