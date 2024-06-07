@@ -26,6 +26,9 @@ private:
 
 	float Health = 0.f;
 
+	UFUNCTION()
+	void DamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* Instigator, AActor* DamageCauser);
+
 
 public:	
 	// Called every frame
