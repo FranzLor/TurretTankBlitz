@@ -32,3 +32,18 @@ void ABasePawn::RotateTurret(FVector LookAtTarget) {
 	FRotator LookAtRotation = FRotator(0.f, ToTarget.Rotation().Yaw, 0.f);
 	TurretMesh->SetWorldRotation(LookAtRotation);
 }
+
+
+void ABasePawn::Fire() {
+	FVector ProjectileSpawnpointLocation = ProjectileSpawnPoint->GetComponentLocation();
+	// debug sphere on fire
+    DrawDebugSphere(
+		GetWorld(),
+		ProjectileSpawnpointLocation,
+		25.f,
+		12,
+		FColor::White,
+		false,
+		3.f
+    ); 
+}
