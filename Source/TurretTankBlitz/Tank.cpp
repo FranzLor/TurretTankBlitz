@@ -4,6 +4,7 @@
 #include "Tank.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 ATank::ATank() {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -29,7 +30,7 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
 void ATank::Move(float Value) {
     FVector DeltaLocation = FVector::ZeroVector;
 
-    DeltaLocation.X = Value * 10.f;
+    DeltaLocation.X = Value * Speed * UGameplayStatics::GetWorldDeltaSeconds(this);
     
     AddActorLocalOffset(DeltaLocation);
 }
