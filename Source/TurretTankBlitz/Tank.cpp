@@ -5,6 +5,8 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
+//#include "DrawDebugHelpers.h"
+
 
 ATank::ATank() {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -25,7 +27,7 @@ void ATank::BeginPlay()
 
     // casting helps get player controller ref
     PlayerControllerRef = Cast<APlayerController>(GetController());
-	
+
 }
 
 // Called every frame
@@ -33,6 +35,25 @@ void ATank::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+    if (PlayerControllerRef) {
+        FHitResult HitResult;
+        PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, HitResult);
+
+        RotateTurret(HitResult.ImpactPoint);
+        
+        // Debug sphere on cursor
+        /**
+        DrawDebugSphere(
+            GetWorld(), 
+            HitResult.ImpactPoint, 
+            20.f,
+            12,
+            FColor::White,
+            false,
+            -1.f
+        ); 
+         */
+    }
 }
 
 // Called to bind functionality to input
