@@ -27,5 +27,9 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
 
 
 void ATank::Move(float Value) {
-    UE_LOG(LogTemp, Warning, TEXT("Move Forward: %f"), Value);
+    FVector DeltaLocation = FVector::ZeroVector;
+
+    DeltaLocation.X = Value * 10.f;
+    
+    AddActorLocalOffset(DeltaLocation);
 }
