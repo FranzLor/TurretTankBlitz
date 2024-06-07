@@ -29,8 +29,10 @@ void ATurretTankBlitzGameMode::BeginPlay() {
 
 
 void ATurretTankBlitzGameMode::HandleGameStart() {
-     Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
+    Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
     TurretTankBlitzPlayerController = Cast<ATurretTankBlitzPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
+
+    StartGame();
 
     if (TurretTankBlitzPlayerController) {
         TurretTankBlitzPlayerController->SetPlayerEnabledState(false);
