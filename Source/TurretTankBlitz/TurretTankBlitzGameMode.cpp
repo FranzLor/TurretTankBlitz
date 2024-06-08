@@ -14,9 +14,15 @@ void ATurretTankBlitzGameMode::ActorDied(AActor* DeadActor) {
         if (TurretTankBlitzPlayerController) {
             TurretTankBlitzPlayerController->SetPlayerEnabledState(false);
         }
+        GameOver(false);
     }
     else if (ATower* DestroyedTower = Cast<ATower>(DeadActor)) {
         DestroyedTower->HandleDestruction();
+        --TargetTowers;
+
+        if (TargetTowers == 0) {
+            GameOver(true);
+        }
     }
 }
 
@@ -29,6 +35,8 @@ void ATurretTankBlitzGameMode::BeginPlay() {
 
 
 void ATurretTankBlitzGameMode::HandleGameStart() {
+    TargetTowers = GetTargetTowersCount();
+
     Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
     TurretTankBlitzPlayerController = Cast<ATurretTankBlitzPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 
@@ -46,4 +54,11 @@ void ATurretTankBlitzGameMode::HandleGameStart() {
 
         GetWorldTimerManager().SetTimer(PlayerEnableTimerHandle, PlayerEnableTimerDelegate, StartDelay, false);
     }
+}
+
+
+int32 ATurretTankBlitzGameMode::GetTargetTowersCount() {
+    TArray<AActor*> Towers;
+    UGameplayStatics::GetAllActorsOfClass(this, ATower::StaticClass(), Towers);
+    return Towers.Num();
 }
