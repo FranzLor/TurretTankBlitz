@@ -62,6 +62,8 @@ void ATank::HandleDestruction() {
     // hide tank & disable tick
     SetActorHiddenInGame(true);
     SetActorTickEnabled(false);
+
+    IsAlive = false;
 }
 
 
