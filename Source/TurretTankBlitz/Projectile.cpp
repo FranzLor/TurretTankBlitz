@@ -6,6 +6,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystemComponent.h"
 
+
 // Sets default values
 AProjectile::AProjectile()
 {
@@ -64,6 +65,10 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 
 		if (HitSound) {
 			UGameplayStatics::PlaySoundAtLocation(this, HitSound, GetActorLocation());
+		}
+
+		if (HitCameraShakeClass) {
+			GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(HitCameraShakeClass);
 		}
 	}
 
